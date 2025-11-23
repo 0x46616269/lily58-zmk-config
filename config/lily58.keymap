@@ -1,0 +1,55 @@
+/*
+ * Lily58 Pro RE Keymap
+ * Optimiert für DE-Layout im OS
+ * Mit Encodern auf beiden Seiten
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            label = "Base";
+            bindings = 
+&kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                     &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp MINUS
+&kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp LBKT
+&kp LSHFT &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp LCTRL &kp Z  &kp X  &kp C    &kp V    &kp B  &kp LBKT  &kp RBKT  &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                        &kp LALT &kp LGUI &mo 1  &kp SPACE &kp RET   &mo 2  &kp BSPC &kp RALT
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp MWHL_UP MWHL_DOWN>;
+        };
+
+        lower_layer {
+            label = "Lower";
+            bindings = 
+&trans    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                       &kp F6    &kp F7    &kp F8   &kp F9    &kp F10  &kp F11
+&trans    &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                       &kp N6    &kp N7    &kp N8   &kp N9    &kp N0   &kp F12
+&trans    &kp SQT  &kp MINUS &trans  &trans   &trans                       &trans    &kp LBKT  &trans   &kp SEMI  &trans   &trans
+&trans    &trans   &kp MINUS &trans  &trans   &kp NUBS &trans    &trans   &trans    &trans    &trans   &kp EQUAL &kp LBKT &kp RBKT
+                             &trans   &trans   &trans   &trans    &trans   &trans    &trans    &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp MWHL_UP MWHL_DOWN>;
+        };
+
+        raise_layer {
+            label = "Raise";
+            bindings = 
+&kp GRAVE &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                       &kp N6    &kp N7   &kp UP    &kp N9    &kp N0   &trans
+&kp F1    &kp F2   &kp F3   &kp F4   &kp F5   &kp F6                       &trans    &kp BSLH &kp LEFT  &kp DOWN  &kp RIGHT &trans
+&kp F7    &kp F8   &kp F9   &kp F10  &kp F11  &kp F12                      &trans    &kp PLUS &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT
+&trans    &trans   &trans   &trans   &trans   &trans   &trans    &trans   &trans    &trans   &trans    &trans    &trans    &trans
+                            &trans   &trans   &trans   &trans    &trans   &trans    &trans   &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp MWHL_UP MWHL_DOWN>;
+        };
+    };
+};
